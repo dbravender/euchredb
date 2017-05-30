@@ -17,6 +17,7 @@ def main():
             sys.exit(0)
         for hand in hands:
             rowid = hand[0]
+            c.execute('update hands set populated = 1 where rowid = ?', [rowid])
             hand = json.loads(hand[1])
             state = EuchreGame.initial_state(hand, trump='h')
             result = (MCTS(EuchreGame, state)
