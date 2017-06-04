@@ -5,3 +5,5 @@ pyparsing==2.2.0
 python-constraint==1.2
 six==1.10.0
 flask==0.12.2
+gitric==0.4
+gunicorn==19.7.1
