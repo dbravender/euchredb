@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 
 conn = sqlite3.connect('euchre.db')
+conn.row_factory = sqlite3.Row
 c = conn.cursor()
 
 
@@ -18,4 +19,4 @@ def hello_world():
                        "'%jd%' and cards like '%jh%' and cards like '%0s%' "
                        "and cards like '%9s%' and cards like '%js%') "
                        "group by card, rank order by rank, count(*) desc;")
-    return jsonify(result.fetchall())
+    return jsonify(map(dict, result.fetchall()))
