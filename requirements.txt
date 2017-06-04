@@ -17,7 +17,6 @@ MarkupSafe==1.0
 mittmcts==0.3
 packaging==16.8
 paramiko==2.1.2
-pkg-resources==0.0.0
 pyasn1==0.2.3
 pyparsing==2.2.0
 python-constraint==1.2
