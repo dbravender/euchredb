@@ -33,8 +33,10 @@ for hand in combinations(cards, 5):
             for card, result in result.iteritems():
                 if card.endswith('c'):
                     new_result[card[0] + 's'] = result
-                if card.endswith('s'):
+                elif card.endswith('s'):
                     new_result[card[0] + 'c'] = result
+                else:
+                    new_result[card] = result
             fixed_hands += 1
         print(hand)
         print(new_result)
