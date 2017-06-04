@@ -1,6 +1,15 @@
 appdirs==1.4.3
+cffi==1.10.0
+click==6.7
+Flask==0.12.2
+greenlet==0.4.12
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
 mittmcts==0.3
 packaging==16.8
 pyparsing==2.2.0
 python-constraint==1.2
+readline==6.2.4.1
 six==1.10.0
+Werkzeug==0.12.2
