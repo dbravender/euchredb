@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Which card should I lead? Euchre database</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class=page>
+      <h1>Which card should I lead? Euchre database</h1>
+    </div>
+    <form action="." method="get">
+      {% for card in cards %}
+        <input name="card" value="{{ card }}"/>
+      {% endfor %}
+      <input type="submit"/>
+    </form>
+    {% for card in cards %}
+      {% if card %}
+        <img src="/static/{{ card }}.png"/>
+      {% endif %}
+    {% endfor %}
+    <ol>
+      {% for result in results %}
+        <li><img src="/static/{{ result.card }}.png">{{ result|tojson|safe }}</li>
+      {% endfor %}
+    </ol>
+  </body>
+</html>
