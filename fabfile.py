@@ -11,6 +11,9 @@ from gitric.api import (  # noqa
 )
 
 
+env.hosts = ['bravender.net:99']
+
+
 @task
 def prod():
     env.user = 'euchredb'
