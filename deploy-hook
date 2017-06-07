@@ -3,3 +3,4 @@ set -euo pipefail
 IFS=$'\n\t'
 
 fab prod deploy
+echo 'Run fab prod cutover after testing to make next live'
