@@ -2,27 +2,35 @@
 <html>
   <head>
     <title>Which card should I lead? Euchre database</title>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
     <div class=page>
       <h1>Which card should I lead? Euchre database</h1>
+      <h4>Hearts is always trump</h4>
     </div>
     <form action="." method="get">
       {% for card in cards %}
-        <input name="card" value="{{ card }}"/>
+        <input size="2" name="c" value="{{ card }}" autocomplete="off" id="search-c{{ loop.index }}"/>
       {% endfor %}
       <input type="submit"/>
     </form>
     {% for card in cards %}
       {% if card %}
-        <img src="/static/{{ card }}.png"/>
+        <img src="/static/{{ card }}.png" alt="{{ card }}"/>
       {% endif %}
     {% endfor %}
-    <ol>
+    <table>
       {% for result in results %}
-        <li><img src="/static/{{ result.card }}.png">{{ result|tojson|safe }}</li>
+        <tr>
+          <td><img src="/static/{{ result.card }}.png" alt="{{ card }}"></td>
+          <td><ul>
+          {% for key, value in result.iteritems() if not key == 'card' %}
+            <li>{{ key }}: {{ value }}</li>
+          {% endfor %}
+          </ul>
+          </td>
+        </tr>
       {% endfor %}
-    </ol>
+    </table>
   </body>
 </html>
