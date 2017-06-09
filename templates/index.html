@@ -2,6 +2,13 @@
 <html>
   <head>
     <title>Which card should I lead? Euchre database</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <style>
+    .hand-card {
+      max-width: 19%;
+      height: auto;
+    }
+    </style>
   </head>
   <body>
     <div class=page>
@@ -16,7 +23,7 @@
     </form>
     {% for card in cards %}
       {% if card %}
-        <img src="/static/{{ card }}.png" alt="{{ card }}"/>
+        <img src="/static/{{ card }}.png" alt="{{ card }}" class="hand-card"/>
       {% endif %}
     {% endfor %}
     <table>
